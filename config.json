@@ -1,0 +1,21 @@
+{
+  "token":"your bot token here",
+  "prefix":"+", 
+  "coin": "PengolinCoin",
+  "symbol": "PGO", 
+  "link": "http://peng-explorer.s2ii.xyz",
+  "tip_amp_emoji": "tip",
+  "tip_any_emoji": "tip100",
+  "tip_any_amount": 100,
+  "faucet": "xxx",
+  "price_source": "xxx", 
+  "price_endpoint": "xxx", 
+  "units": 100000000, 
+  "fee": 1000000,
+  "daemon_host": "127.0.0.1",
+  "daemon_port": "17897",
+  "rpc_password":"pengolincoinonly",
+  "rpc_host": "127.0.0.1",
+  "rpc_port":"8979"
+}
+

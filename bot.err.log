@@ -1,0 +1,874 @@
+Task exception was never retrieved
+future: <Task finished coro=<wallet_watcher() done, defined at /home/cryptopandesal/pengolinbot/bot.py:30> exception=TransportError("Error calling method 'getStatus'",)>
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.6/http/client.py", line 1254, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1300, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1249, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1036, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.6/http/client.py", line 974, in send
+    self.connect()
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ff437c650f0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8979): Max retries exceeded with url: /json_rpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff437c650f0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 53, in send_request
+    response = self.request(data=request_body)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/sessions.py", line 581, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8979): Max retries exceeded with url: /json_rpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ff437c650f0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 34, in wallet_watcher
+    height = int(rpc.getStatus()['blockCount'])
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 55, in send_request
+    raise TransportError('Error calling method %r' % method_name, cause=requests_exception)
+jsonrpc_requests.jsonrpc.TransportError: Error calling method 'getStatus'
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "take" is not found
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: amount is a required argument that is missing.
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: amount is a required argument that is missing.
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "withdraw" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "50" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "60" is not found
+Ignoring exception in command deposit:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 526, in transform
+    return await self.do_conversion(ctx, converter, argument, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 479, in do_conversion
+    return await self._actual_conversion(ctx, converter, argument, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 425, in _actual_conversion
+    ret = await instance.convert(ctx, argument)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/converter.py", line 179, in convert
+    raise BadArgument('User "{}" not found'.format(argument))
+discord.ext.commands.errors.BadArgument: User "Pgo" not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "pgo" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "register" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "bal" is not found
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "withdraw" is not found
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "b" is not found
+Ignoring exception in command deposit:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 526, in transform
+    return await self.do_conversion(ctx, converter, argument, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 479, in do_conversion
+    return await self._actual_conversion(ctx, converter, argument, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 425, in _actual_conversion
+    ret = await instance.convert(ctx, argument)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/converter.py", line 179, in convert
+    raise BadArgument('User "{}" not found'.format(argument))
+discord.ext.commands.errors.BadArgument: User "PGO" not found
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "registerwallPNGLNN1es4kR38pQzm5STTUWZGyvsrWEqNQL2LjyUhsyaavLv1hwuwhBp42sttKAJgDfdrRpA8BKebdBeSb5TPBphoGTwwbfFb12Z" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "take" is not found
+Ignoring exception in command updatewallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "take" is not found
+Task exception was never retrieved
+future: <Task finished coro=<wallet_watcher() done, defined at /home/cryptopandesal/pengolinbot/bot.py:30> exception=TransportError("Error calling method 'getStatus'",)>
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.6/http/client.py", line 1254, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1300, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1249, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1036, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.6/http/client.py", line 974, in send
+    self.connect()
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fa0200c5a20>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8979): Max retries exceeded with url: /json_rpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa0200c5a20>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 53, in send_request
+    response = self.request(data=request_body)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/sessions.py", line 581, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8979): Max retries exceeded with url: /json_rpc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa0200c5a20>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 34, in wallet_watcher
+    height = int(rpc.getStatus()['blockCount'])
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 55, in send_request
+    raise TransportError('Error calling method %r' % method_name, cause=requests_exception)
+jsonrpc_requests.jsonrpc.TransportError: Error calling method 'getStatus'
+Task exception was never retrieved
+future: <Task finished coro=<wallet_watcher() done, defined at /home/cryptopandesal/pengolinbot/bot.py:30> exception=ProtocolError('Error: -32700 Requested object not found',)>
+Traceback (most recent call last):
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 36, in wallet_watcher
+    for tx in get_deposits(start, session):
+  File "/home/cryptopandesal/pengolinbot/utils.py", line 60, in get_deposits
+    transactionData = rpc.getTransactions(firstBlockIndex=starting_height, blockCount=1000)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 62, in send_request
+    return self.parse_response(response)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 78, in parse_response
+    raise ProtocolError('Error: %s %s' % (code, message), server_response=response, server_data=server_data)
+jsonrpc_requests.jsonrpc.ProtocolError: Error: -32700 Requested object not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "3,000" is not found
+Ignoring exception in command updatewallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 166, in updatewallet
+    good_embed.description = "New Balance: `{:0,.2f}` {1}".format(old_balance.amount / config['units'], config['symbol'])
+ValueError: cannot switch from automatic field numbering to manual field specification
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: cannot switch from automatic field numbering to manual field specification
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "bal" is not found
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 317, in tip
+    await _tip(ctx, amount, None, None)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 415, in _tip
+    await ctx.message.add_reaction(EMOJI_MONEYBAGS)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/message.py", line 928, in add_reaction
+    await self._state.http.add_reaction(self.channel.id, self.id, emoji)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/http.py", line 223, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NotFound: 404 Not Found (error code: 10008): Unknown Message
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "bal" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "resgister" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "register" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "update" is not found
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "register" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "address" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "107" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "register" is not found
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "register" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "Tip" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "ball" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "withdraw" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "1" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "take" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "balamce" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "take" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "445" is not found
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Task exception was never retrieved
+future: <Task finished coro=<DiscordWebSocket.from_client() done, defined at /home/cryptopandesal/.local/lib/python3.6/site-packages/discord/gateway.py:218> exception=TimeoutError()>
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/gateway.py", line 224, in from_client
+    gateway = await client.http.get_gateway()
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/http.py", line 827, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/http.py", line 165, in request
+    async with self.__session.request(method, url, **kwargs) as r:
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/client.py", line 1012, in __aenter__
+    self._resp = await self._coro
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/client.py", line 582, in _request
+    break
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/helpers.py", line 596, in __exit__
+    raise asyncio.TimeoutError from None
+concurrent.futures._base.TimeoutError
+Task exception was never retrieved
+future: <Task finished coro=<DiscordWebSocket.from_client() done, defined at /home/cryptopandesal/.local/lib/python3.6/site-packages/discord/gateway.py:218> exception=TimeoutError()>
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/gateway.py", line 224, in from_client
+    gateway = await client.http.get_gateway()
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/http.py", line 827, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/http.py", line 165, in request
+    async with self.__session.request(method, url, **kwargs) as r:
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/client.py", line 1012, in __aenter__
+    self._resp = await self._coro
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/client.py", line 582, in _request
+    break
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/helpers.py", line 596, in __exit__
+    raise asyncio.TimeoutError from None
+concurrent.futures._base.TimeoutError
+Task exception was never retrieved
+future: <Task finished coro=<DiscordWebSocket.from_client() done, defined at /home/cryptopandesal/.local/lib/python3.6/site-packages/discord/gateway.py:218> exception=TimeoutError()>
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/gateway.py", line 224, in from_client
+    gateway = await client.http.get_gateway()
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/http.py", line 827, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/http.py", line 165, in request
+    async with self.__session.request(method, url, **kwargs) as r:
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/client.py", line 1012, in __aenter__
+    self._resp = await self._coro
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/client.py", line 582, in _request
+    break
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/aiohttp/helpers.py", line 596, in __exit__
+    raise asyncio.TimeoutError from None
+concurrent.futures._base.TimeoutError
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "take" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "100500" is not found
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command registerwallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 317, in tip
+    await _tip(ctx, amount, None, None)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 411, in _tip
+    result = rpc.sendTransaction(transfer)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 62, in send_request
+    return self.parse_response(response)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 78, in parse_response
+    raise ProtocolError('Error: %s %s' % (code, message), server_response=response, server_data=server_data)
+jsonrpc_requests.jsonrpc.ProtocolError: Error: -32700 Bad address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProtocolError: Error: -32700 Bad address
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 317, in tip
+    await _tip(ctx, amount, None, None)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 411, in _tip
+    result = rpc.sendTransaction(transfer)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 62, in send_request
+    return self.parse_response(response)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 78, in parse_response
+    raise ProtocolError('Error: %s %s' % (code, message), server_response=response, server_data=server_data)
+jsonrpc_requests.jsonrpc.ProtocolError: Error: -32700 Bad address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProtocolError: Error: -32700 Bad address
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "withdraw" is not found
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 317, in tip
+    await _tip(ctx, amount, None, None)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 411, in _tip
+    result = rpc.sendTransaction(transfer)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 62, in send_request
+    return self.parse_response(response)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 78, in parse_response
+    raise ProtocolError('Error: %s %s' % (code, message), server_response=response, server_data=server_data)
+jsonrpc_requests.jsonrpc.ProtocolError: Error: -32700 Bad address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProtocolError: Error: -32700 Bad address
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 317, in tip
+    await _tip(ctx, amount, None, None)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 411, in _tip
+    result = rpc.sendTransaction(transfer)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 62, in send_request
+    return self.parse_response(response)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 78, in parse_response
+    raise ProtocolError('Error: %s %s' % (code, message), server_response=response, server_data=server_data)
+jsonrpc_requests.jsonrpc.ProtocolError: Error: -32700 Bad address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProtocolError: Error: -32700 Bad address
+Ignoring exception in command updatewallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 790, in invoke
+    await self.prepare(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 751, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 670, in _parse_arguments
+    transformed = await self.transform(ctx, param)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 516, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: address is a required argument that is missing.
+Ignoring exception in command tip:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 317, in tip
+    await _tip(ctx, amount, None, None)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 411, in _tip
+    result = rpc.sendTransaction(transfer)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 130, in __call__
+    return self.__request_method(self.__method_name, args, kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 114, in __request
+    return self.send_request(method_name, is_notification, args or kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 62, in send_request
+    return self.parse_response(response)
+  File "/usr/local/lib/python3.6/dist-packages/jsonrpc_requests/jsonrpc.py", line 78, in parse_response
+    raise ProtocolError('Error: %s %s' % (code, message), server_response=response, server_data=server_data)
+jsonrpc_requests.jsonrpc.ProtocolError: Error: -32700 Bad address
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ProtocolError: Error: -32700 Bad address
+Ignoring exception in command updatewallet:
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 83, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/cryptopandesal/pengolinbot/bot.py", line 166, in updatewallet
+    good_embed.description = "New Balance: `{:0,.2f}` {1}".format(old_balance.amount / config['units'], config['symbol'])
+ValueError: cannot switch from automatic field numbering to manual field specification
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/bot.py", line 892, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 797, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "/home/cryptopandesal/.local/lib/python3.6/site-packages/discord/ext/commands/core.py", line 92, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: ValueError: cannot switch from automatic field numbering to manual field specification
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "/-" is not found
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
+/usr/bin/python3.8: can't open file '/home/cryptopandesal/pengolinbot/bot.py': [Errno 2] No such file or directory
